@@ -1,0 +1,3 @@
+MC:
+sampleSubmission: Basic decision tree with date, TP_lat & TP_lng as features
+mc-submission2: Added TP_Z as a feature, with missing values -> mean(TP_Z)

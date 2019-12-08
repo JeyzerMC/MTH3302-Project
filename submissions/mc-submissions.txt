@@ -3,3 +3,8 @@ mc-submission-2: Added TP_Z as a feature, with missing values -> mean(TP_Z)
 mc-submission-3: Changed DecisionTree into RandomForest with params 3, 10, 0.5, 48
 mc-submission-4: RandomForest with params 4, 21, 0.7, 47 and features: DATE, TP_LAT, TP_LNG, TP_Z, PCP_SUM, PCP_MAX based on closest station
 mc-submission-5: RandomForest with params 3, 30, 0.5, 10 and features: TP_LAT, TP_LNG, TP_Z, PCP_SUM, PCP_MAX based on closest station
+mc-submission-6: 
+	MODEL: RandomForest(4, 47, 0.7, 47) 
+	FEATURES: TP_LAT, TP_LNG, TP_Z, PCP_SUM, PCP_MAX based on closest station
+			  Everything is normalized based on training comb
+	F1-SCORE: 0.5889554928215464 with niter = 10

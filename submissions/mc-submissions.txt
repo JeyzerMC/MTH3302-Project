@@ -1,3 +1,4 @@
 mc-submission-1: Basic decision tree with date, TP_lat & TP_lng as features
 mc-submission-2: Added TP_Z as a feature, with missing values -> mean(TP_Z)
 mc-submission-3: Changed DecisionTree into RandomForest with params 3, 10, 0.5, 48
+mc-submission-4: RandomForest with params 4, 21, 0.7, 47 and features: DATE, TP_LAT, TP_LNG, TP_Z, PCP_SUM, PCP_MAX based on closest station

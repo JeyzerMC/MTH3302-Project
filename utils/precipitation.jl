@@ -18,3 +18,17 @@ end
 function dateToDay(dt)
     return year(dt) * 365 + month(dt) * 30 + day(dt);
 end 
+
+
+function maximum3(col)
+    maxP = 0;
+
+    for i=1:(size(col, 1) - 2)
+        p3h = col[i, 1] + col[i + 1, 1] + col[i + 2, 1]
+
+        if p3h > maxP
+            maxP = p3h
+        end
+    end
+    return maxP;
+end

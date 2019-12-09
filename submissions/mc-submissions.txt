@@ -13,3 +13,13 @@ mc-submission-7:
 	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, DAY, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
 			  Everything is normalized based on training comb
 	F1-SCORE: 0.6169089771652957 with niter = 10
+mc-submission-8: 
+	MODEL: RandomForest(4, 100, 0.8, 20) 
+	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, DAY, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
+			  Nothing is normalized
+	F1-SCORE: 0.6341536292877187 with niter = 10
+[TO SUBMIT] mc-submission-9: 
+	MODEL: RandomForest(3, 100, 0.7, 30) 
+	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
+			  Nothing is normalized
+	F1-SCORE: 0.6226479666429657 with niter = 10

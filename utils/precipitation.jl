@@ -32,3 +32,15 @@ function maximum3(col)
     end
     return maxP;
 end
+
+function mean_wo_missing(col)
+    mean = 0;
+
+    for i=1:size(col, 1)
+        if !isequal(col[i, 1], missing)
+            mean += col[i, 1]
+        end
+    end
+    mean = mean ÷ size(col, 1)
+    return mean;
+end

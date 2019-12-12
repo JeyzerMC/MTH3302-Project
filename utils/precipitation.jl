@@ -44,3 +44,17 @@ function mean_wo_missing(col)
     mean = mean ÷ size(col, 1)
     return mean;
 end
+
+function convert_meteo(meteo)
+    if meteo == "Bellevue"
+        return 0
+    elseif meteo == "Trudeau"
+        return 1
+    elseif meteo == "McTavish"
+        return 2
+    elseif meteo == "StHubert"
+        return 3
+    else
+        return 4
+    end
+end

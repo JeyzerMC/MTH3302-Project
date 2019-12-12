@@ -33,8 +33,13 @@ mc-submission-10:
 	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, DAY, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
 			  Everything is standardized,  PCP not scaled based on distance
 	F1-SCORE: 0.2109375 with niter = 1
-[TO SUBMIT] mc-submission-12: 
+mc-submission-12: 
 	MODEL: GLM with Bernoulli LogitLink Threshold = 0.1009
 	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, DAY, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
 			  Everything is standardized,  PCP not scaled based on distance
 	F1-SCORE: 0.3583238542161547 with niter = 10
+[TO SUBMIT] mc-submission-13: 
+	MODEL: GLM with Bernoulli LogitLink Threshold = 0.0994
+	FEATURES: TP_LNG, TP_Z, MONTH, PCP_SUM, PCP_MAX, METEO based on closest station
+			  Everything is standardized,  PCP not scaled based on distance
+	F1-SCORE: 0.38 with niter = 10

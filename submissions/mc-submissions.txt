@@ -48,3 +48,13 @@ mc-submission-14:
 	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, DAY, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
 			  Everything is standardized,  PCP not scaled based on distance, updated after Max corrections
 	F1-SCORE: 0.6496367063106637 with niter = 10
+mc-submission-15: 
+	MODEL: GLM with Bernoulli LogitLink Threshold = 0.093
+	FEATURES: TP_LNG, TP_Z, MONTH, PCP_SUM, METEO based on closest station
+			  Everything is standardized,  PCP not scaled based on distance
+	F1-SCORE: 0.3778 with niter = 10
+mc-submission-16: 
+	MODEL: RandomForest(3, 100, 0.85, 28) 
+	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, METEO, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
+			  Everything is standardized,  PCP not scaled based on distance, updated after Max corrections
+	F1-SCORE: 0.6408488063660478 with niter = 1

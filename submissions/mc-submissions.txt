@@ -58,3 +58,10 @@ mc-submission-16:
 	FEATURES: TP_LAT, TP_LNG, TP_Z, MONTH, METEO, PCP_SUM, PCP_MAX, PCP_MAX3 based on closest station
 			  Everything is standardized,  PCP not scaled based on distance, updated after Max corrections
 	F1-SCORE: 0.6408488063660478 with niter = 1
+mc-submission-17: 
+	MODEL: GLM with Bernoulli LogitLink Threshold 0.5 everywhere
+	FEATURES: PCP_SUM, PCP_MAX, PCP_MAX3 for each station
+			  Nothing is standardized, outliers removed
+	F1-SCORE: Not computed for the total
+	
+	

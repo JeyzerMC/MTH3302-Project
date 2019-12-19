@@ -74,6 +74,12 @@ mc-submission-19:
 		      RF -> PCP_SUM, PCP_MAX, PCP_MAX3 for each station
 			  Nothing is standardized, outliers removed
 	F1-SCORE: Not computed for the total
+mc-submission-20: 
+	MODEL: Ensemble model with GLM & Random Forest, both auto-tuned
+	FEATURES: GLM -> PCP_SUM, PCP_MAX3 for closest two stations
+		      RF -> PCP_SUM, PCP_MAX3 for closest two stations
+			  Standardized data, outliers removed, second station scaled down
+	F1-SCORE: Not computed for the total
 		
 
 	

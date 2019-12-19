@@ -63,5 +63,10 @@ mc-submission-17:
 	FEATURES: PCP_SUM, PCP_MAX, PCP_MAX3 for each station
 			  Nothing is standardized, outliers removed
 	F1-SCORE: Not computed for the total
+mc-submission-18: 
+	MODEL: Decision Tree pruning at 0.9
+	FEATURES: PCP_SUM, PCP_MAX, PCP_MAX3 for each station
+			  Nothing is standardized, outliers removed
+	F1-SCORE: Not computed for the total
 	
 	

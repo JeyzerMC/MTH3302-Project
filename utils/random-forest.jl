@@ -48,5 +48,5 @@ function get_rf_probas(train_set, validation_set, features, params)
 
     train_model = build_forest(train_labels, train_features, params[1], params[2], params[3] / 100, params[4]);
 
-    return apply_forest_proba(train_model, val_features);
+    return apply_forest_proba(train_model, val_features, [0, 1]);
 end

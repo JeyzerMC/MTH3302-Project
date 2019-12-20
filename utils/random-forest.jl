@@ -50,3 +50,18 @@ function get_rf_probas(train_set, validation_set, features, params)
 
     return apply_forest_proba(train_model, val_features, [0, 1]);
 end
+
+function get_rf_direct(train_set, validation_set, features, params) 
+    train_features = convert(Matrix{Float64}, train_set[:, features]);
+    train_labels = convert(Array{Int64}, train_set[!,:SURVERSE]);
+
+    val_features = convert(Matrix{Float64}, validation_set[:, features]);
+    val_labels = convert(Array{Int64}, validation_set[!,:SURVERSE]);
+
+    train_model = build_forest(train_labels, train_features, params[1], params[2], params[3] / 100, params[4]);
+
+    tmp_pred =  apply_forest(train_model, val_features);
+
+    r = roc(val_labels, tmp_pred);
+    return f1score(r);
+end

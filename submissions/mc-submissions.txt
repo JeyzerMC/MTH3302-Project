@@ -93,7 +93,12 @@ mc-submission-22:
 			  Standardized, outliers removed, second station scaled down
 			  Oversampled to 10000 with 30% surverses
 	F1-SCORE: Not computed for the total
-		
+mc-submission-23: 
+	MODEL: Ensemble model with GLM & Random Forest, both auto-tuned
+	FEATURES: PCP_SUM & PCP_MAX for closest two stations
+			  Standardized, outliers removed, second station scaled down
+			  Oversampled to 10000 with 50% surverses
+	F1-SCORE: 0.965
 
 	
 	

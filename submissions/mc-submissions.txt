@@ -99,6 +99,8 @@ mc-submission-23:
 			  Standardized, outliers removed, second station scaled down
 			  Oversampled to 10000 with 50% surverses
 	F1-SCORE: 0.965
+mc-submission-custom: 
+	Remplacement de la ligne 133 par 1
 
 	
 	

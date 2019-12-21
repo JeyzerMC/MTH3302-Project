@@ -175,3 +175,41 @@ function findBestVariablesCombinationF1Validation(train::DataFrame, validation::
     println("Best combination: ", combinations[indexMax], " with f1score: ", f1scores[indexMax])
     return (combinations[indexMax], f1scores[indexMax])
 end
+
+# Creer un vecteur y avec un modèle des variables `variables` entraîné sur `train` et appliqué sur `test`
+function trainAndPredictNaiveBayes(train::DataFrame, test::DataFrame, variables::Array{Symbol} )
+    n_variables = size(variables,1);
+    likelihoodDistrs = fitModel(train, variables)
+    
+    # Décommenter la ligne suivante pour utiliser le BIC.
+#     modelVariables, bic = findBestVariablesCombinationBIC(train, likelihoodDistrs, variables)
+    
+    prioris = getPrioris(train)
+    
+    println(prioris)
+    modelLikelihoodDistrs = []
+    for variable in variables
+        push!(modelLikelihoodDistrs, likelihoodDistrs[variable]);
+    end
+#     @show modelLikelihoodDistrs
+    y = predictNaiveBayes(test, modelLikelihoodDistrs, prioris, variables);
+    return y;
+end
+
+function trainNaiveBayes(train::DataFrame, validation::DataFrame, variables::Array{Symbol} )
+    likelihoodDistrs = fitModel(train, variables)
+    modelVariables, f1score = findBestVariablesCombinationF1Validation(train, validation, likelihoodDistrs, variables)
+    return (likelihoodDistrs, modelVariables, f1score)
+end
+
+function trainOnValidationAndPredictNaiveBayes(train::DataFrame,validation::DataFrame, test::DataFrame, variables::Array{Symbol} )
+    likelihoodDistrs, modelVariables, f1score = trainNaiveBayes(train, validation, variables)
+    prioris = getPrioris(train)
+    
+    modelLikelihoodDistrs = []
+    for variable in modelVariables
+        push!(modelLikelihoodDistrs, likelihoodDistrs[variable]);
+    end
+    y = predictNaiveBayes(test, modelLikelihoodDistrs, prioris, modelVariables);
+    return y;
+end
